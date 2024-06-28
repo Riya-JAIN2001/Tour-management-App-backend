@@ -14,6 +14,7 @@ const app= express();
 const port= process.env.PORT||8000;
 const corsOptions={
     origin:true,
+    methods:["Get", "Post"],
     credentials:true
 }
 
