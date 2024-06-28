@@ -11,7 +11,7 @@ import bookingRoutes from "./route/bookingRoutes.js"
 import bodyParser from "body-parser";
 dotenv.config();
 const app= express();
-const port= process.env.PORT;
+const port= process.env.PORT||1000;
 const corsOptions={
     origin:true,
     methods:["Get", "Post"],
@@ -49,7 +49,4 @@ app.listen( port,()=>{
 
     console.log(`server is running on the port ${port}`)
 })
-app.listen(port, 'localhost'); // or server.listen(3001, '0.0.0.0'); for all interfaces
-app.on('listening', function() {
-    console.log('Express server started on port %s at %s', app.address().port, app.address().address);
-});
+module.exports= app;
